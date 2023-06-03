@@ -1,8 +1,8 @@
 {
-  "name": "electron-react-typescript",
-  "author": "Diego Fernandes <diego.schell.f@gmail.com>",
-  "version": "2.0.0",
-  "description": "An Electron boilerplate including TypeScript, React, Jest and ESLint.",
+  "name": "gpc-desktop",
+  "author": "Clóvis Chakrian <clovischakriandev@gmail.com>",
+  "version": "1.0.0",
+  "description": "A desktop app for Ginásio Pernambucano",
   "main": "./.webpack/main/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -15,9 +15,13 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.4.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hot-loader": "4.13.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.8.1",
+    "socket.io-client": "^4.6.2",
     "styled-components": "5.3.0"
   },
   "devDependencies": {
@@ -35,10 +39,12 @@
     "@marshallofsound/webpack-asset-relocator-loader": "0.5.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
+    "@types/axios": "^0.14.0",
     "@types/electron-devtools-installer": "2.2.0",
     "@types/jest": "26.0.23",
     "@types/react": "17.0.11",
     "@types/react-dom": "17.0.8",
+    "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "5.1.10",
     "@typescript-eslint/eslint-plugin": "4.27.0",
     "@typescript-eslint/parser": "4.27.0",
