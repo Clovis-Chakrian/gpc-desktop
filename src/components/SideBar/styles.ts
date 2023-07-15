@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const SideBarContainer = styled.aside`
+interface ISideBar {
+  show: boolean;
+};
+
+export const SideBarContainer = styled.aside<ISideBar>`
   width: 120px;
   height: 100vh;
-  display: flex;
+  display: ${props => props.show ? 'flex' : 'none'};
   flex-direction: column;
   align-items: center;
   padding: 10px 0;

@@ -17,10 +17,10 @@ import {
   IoPencil
 } from 'react-icons/io5';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 import { useEffect, useState } from 'react';
 
-import { INotices } from '../../@types/api';
+import { INotices } from '../../../@types/api';
 import { AxiosError } from 'axios';
 
 function Notices() {

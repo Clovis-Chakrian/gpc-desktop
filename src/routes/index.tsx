@@ -2,10 +2,11 @@ import { ReactNode } from 'react';
 import { HashRouter, Route, Routes as Rts } from 'react-router-dom';
 import Login from '../pages/Login';
 
-import Notices from '../pages/Notices';
-import Agenda from '../pages/Agenda';
-import Chat from '../pages/Chat';
-
+import Notices from '../pages/Auth/Notices';
+import Agenda from '../pages/Auth/Agenda';
+import Chat from '../pages/Auth/Chat';
+import Schedules from '../pages/Auth/Schedules';
+import Solicitations from '../pages/Auth/Solicitations';
 
 interface IRoutes {
   children: ReactNode;
@@ -13,19 +14,17 @@ interface IRoutes {
 
 function Routes({ children }: IRoutes) {
   return (
-    <HashRouter>
+    <HashRouter >
       <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
         {
-          window.location.href.includes('/login')
-            ? <></>
-            : children
+          children
         }
         <Rts >
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<Notices />} />
+          <Route path={localStorage.getItem('token') !== null ? '/login' : '/'} element={<Login />} />
+          <Route path={localStorage.getItem('token') === null ? '/notices' : '/'} element={<Notices />} />
           <Route path='/agenda' element={<Agenda />} />
-          <Route path='/schedules' element={<Agenda />} />
-          <Route path='/solicitations' element={<Agenda />} />
+          <Route path='/schedules' element={<Schedules />} />
+          <Route path='/solicitations' element={<Solicitations />} />
           <Route path='/news' element={<Agenda />} />
           <Route path='/chat' element={<Chat />} />
           <Route path='/config' element={<Agenda />} />

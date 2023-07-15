@@ -1,14 +1,25 @@
 import { SideBarContainer, LogoImg, NavBar, SideBarLink, NavBarItem } from './styles';
 import { IoClipboard, IoCalendar, IoDocuments, IoFolderOpen, IoNewspaper, IoChatbubbles, IoSettings } from 'react-icons/io5';
 import Logo from '../../../assets/logo.png';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-function SideBar() {
+function SideBar() {  
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(location.pathname);
+
+  useEffect(() => {
+    setCurrentPath(location.pathname)
+  }, [location.pathname])
+
   return (
-    <SideBarContainer>
+    <SideBarContainer
+    show={currentPath !== '/' || localStorage.getItem('token') !== null}
+    >
       <LogoImg src={Logo} alt='Logo' />
       <NavBar>
         <NavBarItem>
-          <SideBarLink to={'/'}>
+          <SideBarLink to={localStorage.getItem('token') === null ? '/notices' : '/'}>
             <IoClipboard size={44} color='#FFF' />
             <p>Mural</p>
           </SideBarLink>

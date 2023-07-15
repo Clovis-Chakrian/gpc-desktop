@@ -18,10 +18,10 @@ import {
   IoPencil
 } from 'react-icons/io5';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 import { useEffect, useState } from 'react';
 import { AxiosError } from 'axios';
-import { IEvents } from '../../@types/api';
+import { IEvents } from '../../../@types/api';
 
 function Agenda() {
   const [events, setEvents] = useState<IEvents[]>();
